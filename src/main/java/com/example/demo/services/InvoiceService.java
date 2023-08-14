@@ -23,10 +23,6 @@ public class InvoiceService {
         return invoiceRepository.findById(id);
     }
 
-    // public ArrayList<InvoiceModel> findSaleByPerson(Long idPerson) {
-    // return invoiceRepository.findSaleByPerson(idPerson);
-    // }
-
     public InvoiceModel saveInvoice(InvoiceModel invoice) {
         return invoiceRepository.save(invoice);
 
