@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
@@ -25,7 +26,7 @@ public class PersonModel {
     private Integer identifications;
 
     @OneToMany(mappedBy = "person")
-    private Set<InvoiceModel> invoices;
+    private List<InvoiceModel> invoices = new ArrayList<>();
 
     public Long getId() {
         return id;
