@@ -19,6 +19,7 @@ public class PersonController {
     }
 
     @PostMapping()
+    @CrossOrigin()
     public PersonModel savePerson(@RequestBody PersonModel person) {
         return this.personService.savePerson(person);
     }
