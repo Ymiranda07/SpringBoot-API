@@ -20,7 +20,7 @@ public class InvoiceModel {
     @Column(unique = false, nullable = false)
     private int amount;
 
-    @JoinColumn(name = "FK_PERSON", nullable = false)
+    @JoinColumn(name = "person_id", nullable = false)
     @ManyToOne(optional = false, cascade = CascadeType.ALL)
     private PersonModel person;
 
@@ -46,5 +46,13 @@ public class InvoiceModel {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public void setPerson(PersonModel person) {
+        this.person = person;
+    }
+
+    public PersonModel getPerson() {
+        return person;
     }
 }
