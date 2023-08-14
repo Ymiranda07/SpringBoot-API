@@ -1,4 +1,5 @@
 package com.example.demo.services;
+
 import java.util.ArrayList;
 import java.util.Optional;
 import com.example.demo.models.InvoiceModel;
@@ -8,29 +9,36 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class InvoiceService {
-  
+
     @Autowired
     private InvoiceRepository invoiceRepository;
 
-    public ArrayList<InvoiceModel> getInvoice(){
+    @Autowired
+
+    public ArrayList<InvoiceModel> getInvoice() {
         return (ArrayList<InvoiceModel>) invoiceRepository.findAll();
     }
 
-    public InvoiceModel saveInvoice(InvoiceModel invoice){
-        return invoiceRepository.save(invoice);
-    }
-
-    public Optional<InvoiceModel> getById(Long id){
+    public Optional<InvoiceModel> getById(Long id) {
         return invoiceRepository.findById(id);
     }
 
+    // public ArrayList<InvoiceModel> findSaleByPerson(Long idPerson) {
+    // return invoiceRepository.findSaleByPerson(idPerson);
+    // }
+
+    public InvoiceModel saveInvoice(InvoiceModel invoice) {
+        return invoiceRepository.save(invoice);
+
+    }
+
     public boolean deleteInvoice(Long id) {
-        try{
+        try {
             invoiceRepository.deleteById(id);
             return true;
-        }catch(Exception err){
+        } catch (Exception err) {
             return false;
         }
     }
-    
-}   
+
+}
